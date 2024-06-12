@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About | Yassine ESSABIR" description="About Yassine ESSABIR">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/image1.jpeg"
+					alt="Yassine Essabir"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						As a student at the top of my class, I am passionate about creating 
+						innovative strategies and finding creative solutions to drive business 
+						growth. 
+						My experience has allowed me to develop essential skills, and my 
+						ability to quickly adapt to new challenges is one of my strengths.
+						I am also able to effectively learn any programming language.
+						 My strategic approach is based on a combination of in-depth analysis, continuous innovation and a 
+						global vision to ensure the sustainable success of the organizations I advise. 
+						My goal is to turn challenges into opportunities, while cultivating a culture 
+						of excellence within the teams I work with. 
+						I am constantly eager to learn and push the limits of my creativity to offer innovative solutions tailored to 
+						the specific needs of each company I meet.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+					<p>• Scientific Baccalaureate | 2022</p>
+						<p>IBNO ZAYDOUN | Casablanca</p>
+						<br>
+					<p>• Digital Web Development Full Stack | 2022 - Present</p>
+						<p>CFPH | Casablanca</p>
+							</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+					<p>• Web development</p>
+					<p>• HTML | CSS | JAVASCRIPT</p>
+					<p>• BOOTSTRAP | PHP</p>
+					<p>• REACT | LARAVEL </p>
+					<p>• WORDPRESS | SHOPIFY</p>
+					<p>• Software Developer </p>
+					<p>• POO | C#</p>
+					<p>• manage the database</p>
+					<p>• MySQL</p>
+					<p>• MongoDB</p>
+					<p>• version control</p>
+					<p>• Analysis and reports Testing and debugging</p>
+					<p>• Backup management and data recovery</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
